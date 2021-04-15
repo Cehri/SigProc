@@ -1,0 +1,22 @@
+xb = input('x dizisinin baslangic indis degerini giriniz: ');
+xe = input('x dizisinin bitis indis degerini giriniz: ');
+xx = input('x dizisini giriniz: ');
+hb = input('h dizisinin baslangic indis degerini giriniz: ');
+he = input('h dizisinin bitis indis degerini giriniz: ');
+hh = input('h dizisini giriniz: ');
+biconv = conv(xx,hh);
+[mconv,yb,ye] = myconv(xb,xe,xx,hb,he,hh);
+
+tiledlayout(2,2);
+nexttile;
+stem(xb:xe,xx,'filled');
+title('x[n]');
+nexttile;
+stem(hb:he,hh,'filled');
+title('h[n]');
+nexttile;
+stem(yb:ye,mconv,'filled');
+title('my convolution');
+nexttile;
+stem(yb:ye,biconv,'filled');
+title('built-in convolution');
